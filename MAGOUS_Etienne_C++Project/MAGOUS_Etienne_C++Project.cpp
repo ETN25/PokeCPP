@@ -5,11 +5,28 @@
 
 using namespace std;
 
+void Damage(int health) {
+    health -= 2;
+}
+
+void DamageReference(int& heath) {
+    heath -= 2;
+}
+
+void DamagePointedObject(int* heath) {
+    *heath -= 3;
+}
+
 int main()
 {
     cout << "Hello World! hey\n" << endl;
-    string answer;
-    cin >> answer;
-    cout << "\n" + answer << endl;
+    int life = 10;
+    cout << "the value " << life << " is stored at memory address : " << &life << endl;
+    Damage(life);
+    cout << life << endl;
+    DamageReference(life);
+    cout << life << endl;
+    DamagePointedObject(&life);
+    cout << life << endl;
 }
 
